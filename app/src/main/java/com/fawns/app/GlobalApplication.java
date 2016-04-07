@@ -3,7 +3,7 @@ package com.fawns.app;
 import android.app.Application;
 import android.content.Context;
 
-import com.mjx.social.app.common.Constant;
+import com.fawns.app.common.Constant;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.zhy.autolayout.config.AutoLayoutConifg;
 
