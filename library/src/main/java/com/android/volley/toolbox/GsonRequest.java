@@ -7,7 +7,6 @@ import com.android.volley.Response.ErrorListener;
 import com.android.volley.Response.Listener;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
-import com.fawns.library.utils.TLog;
 import com.google.gson.Gson;
 
 import java.io.UnsupportedEncodingException;
@@ -64,7 +63,6 @@ public class GsonRequest<T> extends Request<T> {
         try {
             String jsonString = new String(response.data,
                     HttpHeaderParser.parseCharset(response.headers));
-            TLog.d(TAG, "response ---> " + jsonString);
             return Response.success((T) mGson.fromJson(jsonString, mType), HttpHeaderParser.parseCacheHeaders(response));
         } catch (UnsupportedEncodingException e) {
             return Response.error(new VolleyError(e));

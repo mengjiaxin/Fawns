@@ -31,12 +31,47 @@
     <file url="file://$PROJECT_DIR$/library/src/main/java/com/android/volley/toolbox/NoCache.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/library/src/main/java/com/android/volley/toolbox/RequestFuture.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/library/src/main/java/com/android/volley/toolbox/StringRequest.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/library/src/main/java/com/obsessive/library/smartlayout/SmartTabIndicationInterpolator.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/java/com/obsessive/library/smartlayout/SmartTabIndicationInterpolator.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/library/src/main/java/com/obsessive/library/smartlayout/SmartTabLayout.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/library/src/main/java/com/obsessive/library/smartlayout/SmartTabStrip.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/library/src/main/java/com/obsessive/library/utils/OkHttpStack.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/library/src/main/java/com/obsessive/library/utils/TLog.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/java/com/obsessive/library/smartlayout/SmartTabStrip.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/library/src/main/java/com/obsessive/library/utils/OkHttpStack.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/library/src/main/java/com/obsessive/library/utils/TLog.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/anim/bottom_in.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/anim/bottom_out.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/anim/fade_in.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/anim/fade_out.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/anim/left_in.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/anim/left_out.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/anim/right_in.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/anim/right_out.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/anim/scale_in.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/anim/scale_out.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/anim/top_in.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/anim/top_out.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/drawable-xhdpi/btn_back_normal.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/drawable-xhdpi/btn_back_pressed.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/drawable-xhdpi/btn_export_normal.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/drawable-xhdpi/btn_export_pressed.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/drawable-xhdpi/btn_forward_normal.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/drawable-xhdpi/btn_forward_pressed.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/drawable-xhdpi/btn_refresh_normal.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/drawable-xhdpi/btn_refresh_pressed.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/drawable-xhdpi/ic_error.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/drawable-xhdpi/ic_exception.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/drawable/progress_bar_horizontal.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/layout/activity_common_web.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/layout/browser_controller.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/layout/common_toolbar.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/layout/loading.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/layout/message.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/layout/progress_horizontal.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/layout/swipeback_layout.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/library/src/main/res/values/attrs.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/values/colors.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/values/defaults.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/values/dimens.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/values/drawables.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/res/values/styles.xml" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
