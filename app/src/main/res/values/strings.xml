@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">Fawns</string>
+    <string name="app_name">小鹿社保</string>
+    <string name="double_click_exit">再按一次退出</string>
+    <string name="drawer_open">DrawerOpen</string>
+    <string name="drawer_close">DrawerClose</string>
+
+    <string name="menu_message">消息提醒</string>
+    <string name="menu_about_us">About us</string>
+    <string name="menu_feedback">Feedback</string>
+
+    <string name="bottom_home">首页</string>
+    <string name="bottom_query">查询</string>
+    <string name="bottom_transaction">办理</string>
+
+
 </resources>

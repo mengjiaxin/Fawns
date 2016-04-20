@@ -1,5 +1,10 @@
 package com.fawns.app.view;
 
+import com.fawns.app.bean.NavigationEntity;
+import com.obsessive.library.base.BaseLazyFragment;
+
+import java.util.List;
+
 /**
  * Project Fawns
  * Package com.fawns.app.view
@@ -8,5 +13,5 @@ package com.fawns.app.view;
  * Desc 请用一句话来描述作用
  */
 public interface HomeView {
-
+    void initializeViews(List<BaseLazyFragment> fragments, List<NavigationEntity> navigationList);
 }

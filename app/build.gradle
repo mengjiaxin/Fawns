@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.fawns.app"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -19,7 +19,15 @@ android {
     }
 }
 
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':library')
+    compile project(':ahbottomnavigation')
+    compile 'com.umeng.analytics:analytics:latest.integration'
 }

@@ -4,7 +4,7 @@ import android.content.Context;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
-import com.mjx.library.utils.OkHttpStack;
+import com.obsessive.library.utils.OkHttpStack;
 import com.squareup.okhttp.OkHttpClient;
 
 
