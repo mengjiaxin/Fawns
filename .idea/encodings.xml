@@ -6,40 +6,78 @@
     <file url="file://$PROJECT_DIR$/ahbottomnavigation/src/main/res/values/attrs.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/ahbottomnavigation/src/main/res/values/colors.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/ahbottomnavigation/src/main/res/values/dimens.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/libs/armeabi" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/libs/umeng-update-v2.6.0.1.jar" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/anim/fade_in.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/anim/fade_out.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout-v9" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_demo_list.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_demo_settings.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/layout_item_demo.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_navigation.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/menu/menu_chat.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/menu/menu_home.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_clear_grey600_24dp.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_folder_open_grey600_36dp.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_maps_local_attraction.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_maps_local_bar.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_maps_local_restaurant.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_maps_place.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_photo_camera_grey600_36dp.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_photo_grey600_36dp.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_place_grey600_36dp.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_settings_black_24dp.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_clear_grey600_24dp.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_folder_open_grey600_36dp.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_maps_local_attraction.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_maps_local_bar.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_maps_local_restaurant.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_maps_place.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_photo_camera_grey600_36dp.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_photo_grey600_36dp.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_place_grey600_36dp.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_settings_black_24dp.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/banner.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_action_scan.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_clear_grey600_24dp.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_folder_open_grey600_36dp.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_maps_local_attraction.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_maps_local_bar.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_maps_local_restaurant.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_maps_place.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_photo_camera_grey600_36dp.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_photo_grey600_36dp.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_place_grey600_36dp.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_settings_black_24dp.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_clear_grey600_24dp.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_folder_open_grey600_36dp.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_maps_local_attraction.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_maps_local_bar.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_maps_local_restaurant.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_maps_place.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_photo_camera_grey600_36dp.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_photo_grey600_36dp.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_place_grey600_36dp.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_settings_black_24dp.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_clear_grey600_24dp.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_folder_open_grey600_36dp.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_maps_local_attraction.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_maps_local_bar.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_maps_local_restaurant.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_maps_place.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_photo_camera_grey600_36dp.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_photo_grey600_36dp.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_place_grey600_36dp.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_settings_black_24dp.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/values" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/values-zh" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/values/arrays.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/library/build.gradle" charset="UTF-8" />

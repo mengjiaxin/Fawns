@@ -1,7 +1,6 @@
 package com.fawns.app;
 
 import android.app.Application;
-import android.content.Context;
 
 import com.fawns.app.common.ApiConstants;
 import com.fawns.app.common.Constant;
@@ -37,6 +36,7 @@ public class GlobalApplication extends Application {
         MobclickAgent.setDebugMode(true);
         MobclickAgent.updateOnlineConfig(this);
         MobclickAgent.openActivityDurationTrack(false);
+        UmengUpdateAgent.setUpdateCheckConfig(false);
         UmengUpdateAgent.update(this);
 
         VolleyHelper.getInstance().init(this);

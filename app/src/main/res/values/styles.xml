@@ -7,4 +7,12 @@
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowContentOverlay">@android:color/transparent</item>
     </style>
+
+    <style name="MenuTitleStyle">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="MenuSubTitleStyle">
+        <item name="android:textSize">12sp</item>
+    </style>
 </resources>

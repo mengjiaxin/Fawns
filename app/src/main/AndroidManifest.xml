@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.fawns.app">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
@@ -42,6 +43,11 @@
 
         <activity
             android:name=".ui.activity.MessageActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.activity.ChatActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" />
     </application>

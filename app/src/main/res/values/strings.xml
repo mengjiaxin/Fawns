@@ -6,7 +6,14 @@
 
     <string name="menu_message">消息提醒</string>
     <string name="menu_about_us">About us</string>
-    <string name="menu_feedback">Feedback</string>
+    <string name="menu_service_phone">客服电话</string>
+    <string name="menu_accessory">附件</string>
+    <string name="menu_chat_log">保存聊天记录</string>
+    <string name="menu_feedback">意见反馈</string>
+
+    <string name="chat_toolbar_title">小鹿客服</string>
+    <string name="chat_toolbar_sub_title">欢迎咨询关于社保公积金的问题</string>
+
 
     <string name="bottom_home">首页</string>
     <string name="bottom_query">查询</string>

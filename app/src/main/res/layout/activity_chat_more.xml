@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="@dimen/lay_4"
+        android:layout_marginRight="@dimen/lay_4"
+        android:background="@color/colorInactive" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/lay_8"
+        android:layout_marginTop="@dimen/lay_4"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <net.qiujuer.genius.ui.widget.Button
+                    android:layout_width="@dimen/lay_64"
+                    android:layout_height="@dimen/lay_56"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/lay_4"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@mipmap/ic_photo_camera_grey600_36dp"
+                    android:text="拍照"
+                    android:textColor="@color/grey_700"
+                    android:textSize="@dimen/size_12"
+                    app:gTouchEffect="ripple" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <net.qiujuer.genius.ui.widget.Button
+                    android:layout_width="@dimen/lay_64"
+                    android:layout_height="@dimen/lay_56"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/lay_4"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@mipmap/ic_photo_grey600_36dp"
+                    android:text="图片"
+                    android:textColor="@color/grey_700"
+                    android:textSize="@dimen/size_12"
+                    app:gTouchEffect="ripple" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <net.qiujuer.genius.ui.widget.Button
+                    android:layout_width="@dimen/lay_64"
+                    android:layout_height="@dimen/lay_56"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/lay_4"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@mipmap/ic_folder_open_grey600_36dp"
+                    android:text="文件"
+                    android:textColor="@color/grey_700"
+                    android:textSize="@dimen/size_12"
+                    app:gTouchEffect="ripple" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <net.qiujuer.genius.ui.widget.Button
+                    android:layout_width="@dimen/lay_64"
+                    android:layout_height="@dimen/lay_56"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/lay_4"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@mipmap/ic_place_grey600_36dp"
+                    android:text="位置"
+                    android:textColor="@color/grey_700"
+                    android:textSize="@dimen/size_12"
+                    app:gTouchEffect="ripple" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
+
+
+
+

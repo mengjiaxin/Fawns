@@ -117,6 +117,7 @@ public class HomeActivity extends BaseActivity implements HomeView {
         mNavListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                TLog.d(TAG, "position:" + position);
                 switch (position) {
                     case 0:
                         readyGoCloseDrawers(MessageActivity.class);
@@ -157,7 +158,7 @@ public class HomeActivity extends BaseActivity implements HomeView {
         String[] navigationArrays = getResources().getStringArray(R.array.navigation_list);
         navigationEntities.add(new NavigationEntity("", navigationArrays[0], R.mipmap.ic_maps_local_attraction));
         navigationEntities.add(new NavigationEntity("", navigationArrays[1], R.mipmap.ic_maps_local_bar));
-        navigationEntities.add(new NavigationEntity("", navigationArrays[2], R.mipmap.ic_maps_local_restaurant));
+        navigationEntities.add(new NavigationEntity("", navigationArrays[2], R.mipmap.ic_settings_black_24dp));
         return navigationEntities;
     }
 
@@ -195,6 +196,9 @@ public class HomeActivity extends BaseActivity implements HomeView {
             case R.id.action_message:
                 hideMessageBadgeView();
                 readyGoCloseDrawers(MessageActivity.class);
+                break;
+            case R.id.action_chat:
+                readyGoCloseDrawers(ChatActivity.class);
                 break;
         }
         return super.onOptionsItemSelected(item);

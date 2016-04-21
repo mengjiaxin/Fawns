@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/common_toolbar"
+        layout="@layout/common_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="false">
+
+        <RelativeLayout
+            android:id="@+id/chat_bottom_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#e0e0e0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/lay_4"
+                android:layout_marginLeft="@dimen/lay_8"
+                android:layout_marginRight="@dimen/lay_56"
+                android:layout_marginTop="@dimen/lay_4"
+                android:background="@drawable/chat_message_bottom_bg"
+                android:minHeight="@dimen/lay_44"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/chat_face_ib"
+                        android:layout_width="@dimen/lay_32"
+                        android:layout_height="@dimen/lay_32"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="@dimen/lay_8"
+                        android:layout_marginTop="6dp"
+                        android:background="@android:color/transparent"
+                        android:src="@mipmap/ic_mood_grey600_24dp" />
+
+                    <ImageButton
+                        android:id="@+id/chat_more_ib"
+                        android:layout_width="@dimen/lay_32"
+                        android:layout_height="@dimen/lay_32"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="@dimen/lay_4"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@android:color/transparent"
+                        android:src="@mipmap/ic_add_grey600_24dp" />
+
+                    <EditText
+                        android:id="@+id/chat_message_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/lay_4"
+                        android:layout_marginTop="6dp"
+                        android:layout_toLeftOf="@id/chat_more_ib"
+                        android:layout_toRightOf="@id/chat_face_ib"
+                        android:background="@android:color/transparent"
+                        android:hint="请输入想咨询的问题"
+                        android:minHeight="@dimen/lay_32"
+                        android:textSize="@dimen/size_14" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/chat_more_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/lay_16"
+                    android:layout_marginRight="@dimen/lay_16"
+                    android:visibility="gone">
+
+                    <include
+                        layout="@layout/activity_chat_more"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+            <com.melnykov.fab.FloatingActionButton
+                android:id="@+id/chat_send_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/lay_8"
+                android:layout_marginTop="6dp"
+                android:src="@mipmap/ic_mic_white_24dp"
+                app:fab_colorNormal="@color/colorPrimary"
+                app:fab_colorPressed="@color/colorPrimaryDark"
+                app:fab_colorRipple="@color/colorInactive"
+                app:fab_shadow="false"
+                app:fab_type="mini" />
+
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/chat_message_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/chat_bottom_rl"
+            android:background="#e0e0e0"
+            android:cacheColorHint="#0000"
+            android:divider="@null"
+            android:dividerHeight="5dp"
+            android:listSelector="#00000000"
+            android:visibility="visible" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+
+
+
+
