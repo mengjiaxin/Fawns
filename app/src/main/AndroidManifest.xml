@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
 
     <application
         android:name=".GlobalApplication"
@@ -19,7 +20,17 @@
             android:value="570c912b67e58ea80e001613"></meta-data>
         <meta-data
             android:name="UMENG_CHANNEL"
-            android:value="@string/app_name" />
+            android:value="Fawns" />
+
+        <meta-data
+            android:name="UMENG_MESSAGE_SECRET"
+            android:value="972387d99a9fd564dd392b0ea8b87a17"></meta-data>
+
+        <service
+            android:name=".service.FawnsPushIntentService"
+            android:process=":push" />
+
+        <service android:name=".service.NotificationService" />
 
         <service
             android:name="com.umeng.update.net.DownloadingService"

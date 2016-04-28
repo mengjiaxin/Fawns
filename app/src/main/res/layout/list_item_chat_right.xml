@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/lay_8"
+    android:paddingLeft="@dimen/lay_16"
+    android:paddingRight="@dimen/lay_16"
+    android:paddingTop="@dimen/lay_8">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/chat_right_head_civ"
+        android:layout_width="@dimen/lay_36"
+        android:layout_height="@dimen/lay_36"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:src="@mipmap/login_head" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/lay_4"
+        android:layout_marginLeft="@dimen/lay_36"
+        android:layout_marginRight="@dimen/lay_8"
+        android:layout_marginTop="@dimen/lay_4"
+        android:layout_toLeftOf="@id/chat_right_head_civ"
+        android:background="@drawable/chat_message_right_bg"
+        android:minHeight="@dimen/lay_44"
+        android:minWidth="@dimen/lay_64"
+        android:orientation="vertical">
+
+        <com.rockerhieu.emojicon.EmojiconTextView
+            android:id="@+id/chat_right_text_etv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/lay_2"
+            android:layout_marginLeft="@dimen/lay_8"
+            android:layout_marginRight="@dimen/lay_8"
+            android:layout_marginTop="@dimen/lay_8"
+            android:text="代码就是程序员用开发工具所支持的语言写出来的源文件，是一组由字符、符号或信号码元以离散形式表示信息的明确的规则体系。"
+            android:textColor="@color/black_alpha_208"
+            android:textSize="14sp"
+            app:emojiconSize="20sp" />
+
+        <TextView
+            android:id="@+id/chat_right_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom|left"
+            android:layout_marginBottom="@dimen/lay_4"
+            android:layout_marginLeft="@dimen/lay_8"
+            android:layout_marginRight="@dimen/lay_8"
+            android:text="15:33"
+            android:textColor="@color/black_alpha_96"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
+

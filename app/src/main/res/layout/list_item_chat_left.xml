@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="left|center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/lay_8"
+    android:paddingLeft="@dimen/lay_16"
+    android:paddingRight="@dimen/lay_16"
+    android:paddingTop="@dimen/lay_8">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/chat_left_head_civ"
+        android:layout_width="@dimen/lay_36"
+        android:layout_height="@dimen/lay_36"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:src="@mipmap/ic_launcher" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/lay_4"
+        android:layout_marginLeft="@dimen/lay_8"
+        android:layout_marginRight="@dimen/lay_36"
+        android:layout_marginTop="@dimen/lay_4"
+        android:background="@drawable/chat_message_left_bg"
+        android:minHeight="@dimen/lay_44"
+        android:minWidth="@dimen/lay_64"
+        android:orientation="vertical">
+
+        <com.rockerhieu.emojicon.EmojiconTextView
+            android:id="@+id/chat_left_text_etv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/lay_2"
+            android:layout_marginLeft="@dimen/lay_8"
+            android:layout_marginRight="@dimen/lay_8"
+            android:layout_marginTop="@dimen/lay_8"
+            android:text="新闻，是指通过报纸、电台、广播、电视台、互联网等媒体途径所传播信息的一种称谓。"
+            android:textColor="@color/black_alpha_208"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/chat_left_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="@dimen/lay_4"
+            android:layout_marginLeft="@dimen/lay_8"
+            android:layout_marginRight="@dimen/lay_8"
+            android:text="15:33"
+            android:textColor="@color/black_alpha_96"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+</LinearLayout>
+

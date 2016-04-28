@@ -30,7 +30,6 @@ import com.fawns.app.bean.NavigationEntity;
 import com.fawns.app.ui.base.BaseActivity;
 import com.fawns.app.ui.fragment.DemoFragment;
 import com.fawns.app.view.HomeView;
-import com.fawns.app.view.base.BaseView;
 import com.obsessive.library.adapter.ListViewDataAdapter;
 import com.obsessive.library.adapter.ViewHolderBase;
 import com.obsessive.library.adapter.ViewHolderCreator;
@@ -39,6 +38,9 @@ import com.obsessive.library.eventbus.EventCenter;
 import com.obsessive.library.netstatus.NetUtils;
 import com.obsessive.library.utils.TLog;
 import com.obsessive.library.widgets.BadgeView;
+import com.umeng.message.IUmengRegisterCallback;
+import com.umeng.message.PushAgent;
+import com.umeng.message.UmengRegistrar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,7 +72,6 @@ public class HomeActivity extends BaseActivity implements HomeView {
     private ArrayList<AHBottomNavigationItem> bottomNavigationItems = new ArrayList<>();
     private FragmentManager fragmentManager = getFragmentManager();
 
-    private int mCurrentMenuCheckedPos = 0;
     private ActionBarDrawerToggle mActionBarDrawerToggle;
     private ListViewDataAdapter<NavigationEntity> mNavListAdapter;
 
@@ -80,6 +81,24 @@ public class HomeActivity extends BaseActivity implements HomeView {
         initDrawer();
         initBottomUI();
         initNavList();
+
+        PushAgent mPushAgent = PushAgent.getInstance(mContext);
+        //开启推送并设置注册的回调处理
+        mPushAgent.enable(new IUmengRegisterCallback() {
+            @Override
+            public void onRegistered(final String registrationId) {
+                new Handler().post(new Runnable() {
+                    @Override
+                    public void run() {
+                        //onRegistered方法的参数registrationId即是device_token
+                        TLog.e("device_token", registrationId);
+                    }
+                });
+            }
+        });
+
+        String device_token = UmengRegistrar.getRegistrationId(mContext);
+        TLog.e("device_token", device_token);
     }
 
     private void initNavList() {

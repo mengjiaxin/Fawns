@@ -9,6 +9,7 @@ import com.fawns.app.view.base.BaseView;
 import com.obsessive.library.base.BaseAppCompatActivity;
 import com.obsessive.library.base.BaseSwipeBackCompatActivity;
 import com.umeng.analytics.MobclickAgent;
+import com.umeng.message.PushAgent;
 
 import butterknife.ButterKnife;
 
@@ -29,6 +30,8 @@ public abstract class BaseActivity extends BaseAppCompatActivity implements Base
         if (isApplyKitKatTranslucency()) {
             setSystemBarTintDrawable(getResources().getDrawable(R.drawable.sr_primary));
         }
+        // 统计应用启动数据
+        PushAgent.getInstance(this).onAppStart();
     }
 
     @Override

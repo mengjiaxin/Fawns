@@ -26,6 +26,7 @@
             android:background="#e0e0e0">
 
             <LinearLayout
+                android:id="@+id/chat_message_text_ll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/lay_4"
@@ -61,7 +62,7 @@
                         android:background="@android:color/transparent"
                         android:src="@mipmap/ic_add_grey600_24dp" />
 
-                    <EditText
+                    <com.rockerhieu.emojicon.EmojiconEditText
                         android:id="@+id/chat_message_et"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -72,7 +73,10 @@
                         android:background="@android:color/transparent"
                         android:hint="请输入想咨询的问题"
                         android:minHeight="@dimen/lay_32"
-                        android:textSize="@dimen/size_14" />
+                        android:textSize="@dimen/size_14"
+                        app:emojiconSize="20sp" />
+
+
                 </RelativeLayout>
 
 
@@ -91,6 +95,39 @@
 
                 </RelativeLayout>
 
+                <RelativeLayout
+                    android:id="@+id/chat_face_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <include
+                        layout="@layout/activity_chat_face"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/chat_message_voice_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/lay_4"
+                android:layout_marginLeft="@dimen/lay_8"
+                android:layout_marginRight="@dimen/lay_56"
+                android:layout_marginTop="@dimen/lay_4"
+                android:background="@drawable/chat_message_bottom_bg"
+                android:gravity="center"
+                android:minHeight="@dimen/lay_44"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="按住 说话" />
 
             </LinearLayout>
 

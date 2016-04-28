@@ -18,16 +18,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/action_chat_calculator"
+        android:icon="@mipmap/ic_local_phone_white_24dp"
+        android:title="@string/menu_service_phone"
+        app:showAsAction="always" />
+
+    <item
         android:id="@+id/action_chat_accessory"
         android:icon="@mipmap/ic_attach_file_white_24dp"
         android:title="@string/menu_accessory"
         app:showAsAction="always" />
 
+
     <item
         android:id="@+id/action_chat_message"
         android:icon="@mipmap/ic_local_phone_white_24dp"
         android:title="@string/menu_service_phone"
-        app:showAsAction="always" />
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/action_chat_log"

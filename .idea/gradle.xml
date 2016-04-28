@@ -9,8 +9,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/PushSDK" />
             <option value="$PROJECT_DIR$/ahbottomnavigation" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/emojicon" />
             <option value="$PROJECT_DIR$/library" />
           </set>
         </option>
