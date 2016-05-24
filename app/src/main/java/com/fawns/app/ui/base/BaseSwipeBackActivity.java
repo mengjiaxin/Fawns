@@ -49,12 +49,15 @@ public abstract class BaseSwipeBackActivity extends BaseSwipeBackCompatActivity 
     @Override
     protected void onResume() {
         super.onResume();
+        // 通过umeng统计页面访问次数
+        MobclickAgent.onPageStart(setToolbarTitle());
         MobclickAgent.onResume(this);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        MobclickAgent.onPageEnd(setToolbarTitle());
         MobclickAgent.onPause(this);
     }
 

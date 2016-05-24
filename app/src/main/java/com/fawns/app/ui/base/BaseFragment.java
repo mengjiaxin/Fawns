@@ -16,15 +16,16 @@ public abstract class BaseFragment extends BaseLazyFragment implements BaseView 
     @Override
     public void onResume() {
         super.onResume();
-        MobclickAgent.onPageStart(TAG_LOG);
+        MobclickAgent.onPageStart(setFragmentName());
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        MobclickAgent.onPageEnd(TAG_LOG);
+        MobclickAgent.onPageEnd(setFragmentName());
     }
 
+    protected abstract String setFragmentName();
 
     @Override
     public void showError(String msg) {

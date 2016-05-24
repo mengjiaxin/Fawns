@@ -13,6 +13,8 @@ import com.umeng.analytics.MobclickAgent;
 import com.umeng.update.UmengUpdateAgent;
 import com.zhy.autolayout.config.AutoLayoutConifg;
 
+import cn.jpush.android.api.JPushInterface;
+
 /**
  * Project SocialSecurity
  * Package com.mjx.social.app
@@ -41,6 +43,10 @@ public class GlobalApplication extends Application {
 
         VolleyHelper.getInstance().init(this);
         ImageLoader.getInstance().init(ImageLoaderHelper.getInstance(this).getImageLoaderConfiguration(ApiConstants.Paths.IMAGE_LOADER_CACHE_PATH));
+
+        // JPush
+        JPushInterface.setDebugMode(true); // 设置开启日志,发布时请关闭日志
+        JPushInterface.init(this); // 初始化 JPush
     }
 
     @Override

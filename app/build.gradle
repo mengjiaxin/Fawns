@@ -17,6 +17,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    sourceSets.main {
+        jniLibs.srcDirs = ['libs']  // <-- Set your folder here!
+    }
 }
 
 allprojects {
@@ -31,5 +35,4 @@ dependencies {
     compile project(':ahbottomnavigation')
     compile 'com.umeng.analytics:analytics:latest.integration'
     compile project(':emojicon')
-    compile project(':PushSDK')
 }

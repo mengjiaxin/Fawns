@@ -1,7 +1,7 @@
 package com.fawns.app.ui.activity;
 
 import android.app.FragmentManager;
-import android.content.Context;
+import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -27,6 +27,7 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 import com.aurelhubert.ahbottomnavigation.AHHelper;
 import com.fawns.app.R;
 import com.fawns.app.bean.NavigationEntity;
+import com.fawns.app.receiver.PushMessageReceiver;
 import com.fawns.app.ui.base.BaseActivity;
 import com.fawns.app.ui.fragment.DemoFragment;
 import com.fawns.app.view.HomeView;
@@ -38,15 +39,13 @@ import com.obsessive.library.eventbus.EventCenter;
 import com.obsessive.library.netstatus.NetUtils;
 import com.obsessive.library.utils.TLog;
 import com.obsessive.library.widgets.BadgeView;
-import com.umeng.message.IUmengRegisterCallback;
-import com.umeng.message.PushAgent;
-import com.umeng.message.UmengRegistrar;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import cn.jpush.android.api.JPushInterface;
 
 /**
  * Project Fawns
@@ -75,6 +74,7 @@ public class HomeActivity extends BaseActivity implements HomeView {
     private ActionBarDrawerToggle mActionBarDrawerToggle;
     private ListViewDataAdapter<NavigationEntity> mNavListAdapter;
 
+    public static boolean isForeground;
 
     @Override
     protected void initViewsAndEvents() {
@@ -82,23 +82,22 @@ public class HomeActivity extends BaseActivity implements HomeView {
         initBottomUI();
         initNavList();
 
-        PushAgent mPushAgent = PushAgent.getInstance(mContext);
-        //开启推送并设置注册的回调处理
-        mPushAgent.enable(new IUmengRegisterCallback() {
-            @Override
-            public void onRegistered(final String registrationId) {
-                new Handler().post(new Runnable() {
-                    @Override
-                    public void run() {
-                        //onRegistered方法的参数registrationId即是device_token
-                        TLog.e("device_token", registrationId);
-                    }
-                });
-            }
-        });
 
-        String device_token = UmengRegistrar.getRegistrationId(mContext);
-        TLog.e("device_token", device_token);
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        isForeground = true;
+        JPushInterface.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        isForeground = false;
+        JPushInterface.onPause(this);
     }
 
     private void initNavList() {
@@ -419,6 +418,11 @@ public class HomeActivity extends BaseActivity implements HomeView {
         }
     });
 
+    /**
+     * 显示badgeView
+     *
+     * @param showCount
+     */
     public void showMessageBadgeView(int showCount) {
         Message msg = new Message();
         msg.what = BADGE_VIEW_SHOW;
@@ -426,6 +430,9 @@ public class HomeActivity extends BaseActivity implements HomeView {
         mBadgeviewHandler.sendMessage(msg);
     }
 
+    /**
+     * 隐藏badgeView
+     */
     public void hideMessageBadgeView() {
         Message msg = new Message();
         msg.what = BADGE_VIEW_HIDE;

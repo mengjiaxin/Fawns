@@ -1,1 +1,1 @@
-include ':app', ':library', ':ahbottomnavigation', ':emojicon', ':PushSDK'
+include ':app', ':library', ':ahbottomnavigation', ':emojicon'

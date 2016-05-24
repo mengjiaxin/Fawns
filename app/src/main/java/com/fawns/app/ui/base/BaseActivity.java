@@ -7,9 +7,7 @@ import com.fawns.app.GlobalApplication;
 import com.fawns.app.R;
 import com.fawns.app.view.base.BaseView;
 import com.obsessive.library.base.BaseAppCompatActivity;
-import com.obsessive.library.base.BaseSwipeBackCompatActivity;
 import com.umeng.analytics.MobclickAgent;
-import com.umeng.message.PushAgent;
 
 import butterknife.ButterKnife;
 
@@ -30,8 +28,6 @@ public abstract class BaseActivity extends BaseAppCompatActivity implements Base
         if (isApplyKitKatTranslucency()) {
             setSystemBarTintDrawable(getResources().getDrawable(R.drawable.sr_primary));
         }
-        // 统计应用启动数据
-        PushAgent.getInstance(this).onAppStart();
     }
 
     @Override
@@ -49,12 +45,15 @@ public abstract class BaseActivity extends BaseAppCompatActivity implements Base
     @Override
     protected void onResume() {
         super.onResume();
+        // 通过umeng统计页面访问次数
+        MobclickAgent.onPageStart(setToolbarTitle());
         MobclickAgent.onResume(this);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        MobclickAgent.onPageEnd(setToolbarTitle());
         MobclickAgent.onPause(this);
     }
 

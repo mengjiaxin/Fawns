@@ -2,12 +2,17 @@ package com.fawns.app.ui.activity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.fawns.app.R;
 import com.fawns.app.ui.base.BaseActivity;
 import com.fawns.app.ui.base.BaseSwipeBackActivity;
 import com.obsessive.library.eventbus.EventCenter;
 import com.obsessive.library.netstatus.NetUtils;
+import com.squareup.picasso.Picasso;
+import com.umeng.analytics.MobclickAgent;
+
+import butterknife.InjectView;
 
 /**
  * Project Fawns
@@ -17,6 +22,17 @@ import com.obsessive.library.netstatus.NetUtils;
  * Desc 请用一句话来描述作用
  */
 public class MessageActivity extends BaseSwipeBackActivity {
+
+    @InjectView(R.id.message_banner)
+    ImageView mBannerImageView;
+
+    String url = "http://square.github.io/picasso/static/sample.png";
+
+    @Override
+    protected void initViewsAndEvents() {
+
+        Picasso.with(this).load("http://i.imgur.com/DvpvklR.png").into(mBannerImageView);
+    }
 
     @Override
     protected boolean isApplyKitKatTranslucency() {
@@ -48,10 +64,6 @@ public class MessageActivity extends BaseSwipeBackActivity {
         return null;
     }
 
-    @Override
-    protected void initViewsAndEvents() {
-
-    }
 
     @Override
     protected void onNetworkConnected(NetUtils.NetType type) {
@@ -82,4 +94,6 @@ public class MessageActivity extends BaseSwipeBackActivity {
     protected TransitionMode getOverridePendingTransitionMode() {
         return TransitionMode.RIGHT;
     }
+
+
 }
