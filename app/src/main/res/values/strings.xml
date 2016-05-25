@@ -18,6 +18,7 @@
     <string name="bottom_home">首页</string>
     <string name="bottom_query">查询</string>
     <string name="bottom_transaction">办理</string>
+    <string name="bottom_my">我的</string>
 
 
     <string name="action_settings">Settings</string>

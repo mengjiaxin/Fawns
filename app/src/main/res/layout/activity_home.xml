@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
@@ -13,74 +12,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <android.support.v4.widget.DrawerLayout
-        android:id="@+id/home_drawer"
+
+    <com.aurelhubert.ahbottomnavigation.AHBottomNavigation
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation"
+        android:layout_below="@id/common_toolbar">
 
         <com.obsessive.library.widgets.XViewPager
             android:id="@+id/home_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <RelativeLayout
-            android:layout_width="@dimen/home_menu_width"
-            android:layout_height="match_parent"
-            android:layout_gravity="left">
 
-            <ImageView
-                android:id="@+id/home_navigation_top_image"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/home_menu_top_image_height"
-                android:layout_alignParentTop="true"
-                android:clickable="true"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                android:scaleType="centerCrop"
-                android:src="@mipmap/banner_1" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/home_menu_top_layout_height"
-                android:layout_marginLeft="@dimen/lay_24"
-                android:layout_marginTop="@dimen/lay_16">
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/profile_image"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true"
-                    android:src="@mipmap/login_head"
-                    app:civ_border_color="@color/white"
-                    app:civ_border_width="2dp" />
-
-            </RelativeLayout>
-
-
-            <ListView
-                android:id="@+id/home_navigation_list"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@id/home_navigation_top_image"
-                android:background="@android:color/white"
-                android:cacheColorHint="@android:color/transparent"
-                android:divider="@null"
-                android:dividerHeight="0dp"
-                android:overScrollMode="never"
-                android:scrollbars="none" />
-        </RelativeLayout>
-
-
-    </android.support.v4.widget.DrawerLayout>
-
-    <com.aurelhubert.ahbottomnavigation.AHBottomNavigation
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
 
 
 

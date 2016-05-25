@@ -21,7 +21,7 @@ import butterknife.InjectView;
  * Date 2016/4/20 21:35
  * Desc 请用一句话来描述作用
  */
-public class MessageActivity extends BaseSwipeBackActivity {
+public class MessageActivity extends BaseActivity {
 
     @InjectView(R.id.message_banner)
     ImageView mBannerImageView;
@@ -32,6 +32,11 @@ public class MessageActivity extends BaseSwipeBackActivity {
     protected void initViewsAndEvents() {
 
         Picasso.with(this).load("http://i.imgur.com/DvpvklR.png").into(mBannerImageView);
+    }
+
+    @Override
+    protected boolean isBackHomeButtonEnabled() {
+        return true;
     }
 
     @Override
@@ -87,7 +92,7 @@ public class MessageActivity extends BaseSwipeBackActivity {
 
     @Override
     protected boolean toggleOverridePendingTransition() {
-        return true;
+        return false;
     }
 
     @Override

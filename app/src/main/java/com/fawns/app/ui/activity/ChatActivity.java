@@ -28,6 +28,7 @@ import com.daimajia.androidanimations.library.YoYo;
 import com.fawns.app.R;
 import com.fawns.app.bean.MessageEntity;
 import com.fawns.app.ui.adpater.MessageAdapter;
+import com.fawns.app.ui.base.BaseActivity;
 import com.fawns.app.ui.base.BaseSwipeBackActivity;
 import com.melnykov.fab.FloatingActionButton;
 import com.obsessive.library.eventbus.EventCenter;
@@ -51,7 +52,7 @@ import butterknife.OnClick;
  * Date 2016/4/21 15:19
  * Desc 请用一句话来描述作用
  */
-public class ChatActivity extends BaseSwipeBackActivity implements EmojiconGridFragment.OnEmojiconClickedListener, EmojiconsFragment.OnEmojiconBackspaceClickedListener {
+public class ChatActivity extends BaseActivity implements EmojiconGridFragment.OnEmojiconClickedListener, EmojiconsFragment.OnEmojiconBackspaceClickedListener {
 
     private static final String TAG = ChatActivity.class.getSimpleName();
 
@@ -286,6 +287,11 @@ public class ChatActivity extends BaseSwipeBackActivity implements EmojiconGridF
         mToolbar.setTitleTextAppearance(this, R.style.MenuTitleStyle);
         mToolbar.setSubtitleTextAppearance(this, R.style.MenuSubTitleStyle);
         mToolbar.setSubtitle(getString(R.string.chat_toolbar_sub_title));
+    }
+
+    @Override
+    protected boolean isBackHomeButtonEnabled() {
+        return true;
     }
 
     @Override

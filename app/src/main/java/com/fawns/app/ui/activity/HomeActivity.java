@@ -1,44 +1,33 @@
 package com.fawns.app.ui.activity;
 
 import android.app.FragmentManager;
-import android.content.IntentFilter;
-import android.content.res.Configuration;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.view.Gravity;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
-import com.aurelhubert.ahbottomnavigation.AHHelper;
 import com.fawns.app.R;
 import com.fawns.app.bean.NavigationEntity;
-import com.fawns.app.receiver.PushMessageReceiver;
+import com.fawns.app.ui.adpater.HomeFragmentAdapter;
 import com.fawns.app.ui.base.BaseActivity;
+import com.fawns.app.ui.base.BaseFragment;
 import com.fawns.app.ui.fragment.DemoFragment;
+import com.fawns.app.ui.fragment.IndexFragment;
+import com.fawns.app.ui.fragment.MyFragment;
+import com.fawns.app.ui.fragment.SearchFragment;
+import com.fawns.app.ui.fragment.TransactionFragment;
 import com.fawns.app.view.HomeView;
-import com.obsessive.library.adapter.ListViewDataAdapter;
-import com.obsessive.library.adapter.ViewHolderBase;
-import com.obsessive.library.adapter.ViewHolderCreator;
 import com.obsessive.library.base.BaseLazyFragment;
 import com.obsessive.library.eventbus.EventCenter;
 import com.obsessive.library.netstatus.NetUtils;
-import com.obsessive.library.utils.TLog;
 import com.obsessive.library.widgets.BadgeView;
+import com.obsessive.library.widgets.XViewPager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,29 +49,21 @@ public class HomeActivity extends BaseActivity implements HomeView {
 
     private static long DOUBLE_CLICK_TIME = 0L;
 
-    @InjectView(R.id.home_drawer)
-    DrawerLayout mDrawerLayout;
-    @InjectView(R.id.home_navigation_list)
-    ListView mNavListView;
     @InjectView(R.id.bottom_navigation)
     AHBottomNavigation mBottomNavigation;
+    @InjectView(R.id.home_container)
+    XViewPager mViewPager;
 
-    private DemoFragment currentFragment;
     private ArrayList<AHBottomNavigationItem> bottomNavigationItems = new ArrayList<>();
-    private FragmentManager fragmentManager = getFragmentManager();
-
-    private ActionBarDrawerToggle mActionBarDrawerToggle;
-    private ListViewDataAdapter<NavigationEntity> mNavListAdapter;
+    private List<BaseFragment> homeFragments = new ArrayList<BaseFragment>();
+    private HomeFragmentAdapter fragmentAdapter;
 
     public static boolean isForeground;
 
     @Override
     protected void initViewsAndEvents() {
-        initDrawer();
         initBottomUI();
-        initNavList();
-
-
+        initFragments();
     }
 
 
@@ -100,56 +81,11 @@ public class HomeActivity extends BaseActivity implements HomeView {
         JPushInterface.onPause(this);
     }
 
-    private void initNavList() {
-        mNavListAdapter = new ListViewDataAdapter<>(new ViewHolderCreator<NavigationEntity>() {
-            @Override
-            public ViewHolderBase<NavigationEntity> createViewHolder(int position) {
-                return new ViewHolderBase<NavigationEntity>() {
-
-                    private ImageView itemIcon;
-                    private TextView itemName;
-
-                    @Override
-                    public View createView(LayoutInflater layoutInflater) {
-                        View convertView = layoutInflater.inflate(R.layout.list_item_navigation, null);
-                        itemIcon = ButterKnife.findById(convertView, R.id.list_item_navigation_icon);
-                        itemName = ButterKnife.findById(convertView, R.id.list_item_navigation_name);
-                        return convertView;
-                    }
-
-                    @Override
-                    public void showData(int position, NavigationEntity navigationEntity) {
-                        Drawable iconDrawable = AHHelper.getTintDrawable(HomeActivity.this, navigationEntity.getIconResId(), ContextCompat.getColor(HomeActivity.this, R.color.colorInactive));
-//                        itemIcon.setImageResource(navigationEntity.getIconResId());
-                        itemIcon.setImageDrawable(iconDrawable);
-                        itemName.setText(navigationEntity.getName());
-                    }
-                };
-            }
-        });
-
-        mNavListView.setAdapter(mNavListAdapter);
-        mNavListAdapter.getDataList().addAll(getNavigationListData());
-        mNavListAdapter.notifyDataSetChanged();
-
-        mNavListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                TLog.d(TAG, "position:" + position);
-                switch (position) {
-                    case 0:
-                        readyGoCloseDrawers(MessageActivity.class);
-                        break;
-                    case 1:
-
-                        break;
-                    case 2:
-
-                        break;
-                }
-            }
-        });
+    @Override
+    protected boolean isBackHomeButtonEnabled() {
+        return false;
     }
+
 
     /**
      * 先把关闭抽屉暂停一下,再打开Activity,不然看着有点卡顿
@@ -157,7 +93,6 @@ public class HomeActivity extends BaseActivity implements HomeView {
      * @param c
      */
     private void readyGoCloseDrawers(Class c) {
-        mDrawerLayout.closeDrawers();
         Message msg = new Message();
         msg.obj = c;
         readyGoHandler.sendMessageDelayed(msg, 300);
@@ -171,35 +106,11 @@ public class HomeActivity extends BaseActivity implements HomeView {
         }
     });
 
-    public List<NavigationEntity> getNavigationListData() {
-        List<NavigationEntity> navigationEntities = new ArrayList<>();
-        String[] navigationArrays = getResources().getStringArray(R.array.navigation_list);
-        navigationEntities.add(new NavigationEntity("", navigationArrays[0], R.mipmap.ic_maps_local_attraction));
-        navigationEntities.add(new NavigationEntity("", navigationArrays[1], R.mipmap.ic_maps_local_bar));
-        navigationEntities.add(new NavigationEntity("", navigationArrays[2], R.mipmap.ic_settings_black_24dp));
-        return navigationEntities;
-    }
-
     @Override
     public void initializeViews(List<BaseLazyFragment> fragments, List<NavigationEntity> navigationList) {
 
     }
 
-    @Override
-    protected void onPostCreate(Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        if (mActionBarDrawerToggle != null) {
-            mActionBarDrawerToggle.syncState();
-        }
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        if (mActionBarDrawerToggle != null) {
-            mActionBarDrawerToggle.onConfigurationChanged(newConfig);
-        }
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -229,7 +140,7 @@ public class HomeActivity extends BaseActivity implements HomeView {
 
     @Override
     protected String setToolbarTitle() {
-        return "";
+        return getString(R.string.app_name);
     }
 
     @Override
@@ -254,12 +165,10 @@ public class HomeActivity extends BaseActivity implements HomeView {
 
     @Override
     protected void onNetworkConnected(NetUtils.NetType type) {
-
     }
 
     @Override
     protected void onNetworkDisConnected() {
-
     }
 
     @Override
@@ -284,46 +193,16 @@ public class HomeActivity extends BaseActivity implements HomeView {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (event.getKeyCode() == KeyEvent.KEYCODE_MENU) {
-            if (mDrawerLayout.isDrawerOpen(Gravity.LEFT)) {
-                mDrawerLayout.closeDrawer(Gravity.LEFT);
+        if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
+            if ((System.currentTimeMillis() - DOUBLE_CLICK_TIME) > 2000) {
+                showToast(getString(R.string.double_click_exit));
+                DOUBLE_CLICK_TIME = System.currentTimeMillis();
             } else {
-                mDrawerLayout.openDrawer(Gravity.LEFT);
-            }
-            return true;
-        } else if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
-            if (mDrawerLayout.isDrawerOpen(Gravity.LEFT)) {
-                mDrawerLayout.closeDrawer(Gravity.LEFT);
-            } else {
-                if ((System.currentTimeMillis() - DOUBLE_CLICK_TIME) > 2000) {
-                    showToast(getString(R.string.double_click_exit));
-                    DOUBLE_CLICK_TIME = System.currentTimeMillis();
-                } else {
-                    getBaseApplication().exitApp();
-                }
+                getBaseApplication().exitApp();
             }
             return true;
         }
         return super.onKeyDown(keyCode, event);
-    }
-
-
-    private void initDrawer() {
-        mActionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.drawer_open, R.string.drawer_close) {
-
-            @Override
-            public void onDrawerOpened(View drawerView) {
-                super.onDrawerOpened(drawerView);
-            }
-
-            @Override
-            public void onDrawerClosed(View drawerView) {
-                super.onDrawerClosed(drawerView);
-            }
-        };
-
-        mActionBarDrawerToggle.setDrawerIndicatorEnabled(true);
-        mDrawerLayout.setDrawerListener(mActionBarDrawerToggle);
     }
 
 
@@ -332,33 +211,38 @@ public class HomeActivity extends BaseActivity implements HomeView {
         AHBottomNavigationItem item1 = new AHBottomNavigationItem(getString(R.string.bottom_home), R.mipmap.ic_home_white_24dp);
         AHBottomNavigationItem item2 = new AHBottomNavigationItem(getString(R.string.bottom_query), R.mipmap.ic_find_in_page_white_24dp);
         AHBottomNavigationItem item3 = new AHBottomNavigationItem(getString(R.string.bottom_transaction), R.mipmap.ic_assignment_black_24dp);
+        AHBottomNavigationItem item4 = new AHBottomNavigationItem(getString(R.string.bottom_my), R.mipmap.ic_timer_auto_white_24dp);
 
         bottomNavigationItems.add(item1);
         bottomNavigationItems.add(item2);
         bottomNavigationItems.add(item3);
+        bottomNavigationItems.add(item4);
 
         mBottomNavigation.addItems(bottomNavigationItems);
         mBottomNavigation.setAccentColor(getResources().getColor(R.color.colorPrimary));
+        mBottomNavigation.setInactiveColor(getResources().getColor(R.color.colorInactive));
         mBottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
             @Override
             public void onTabSelected(int position, boolean wasSelected) {
-                mDrawerLayout.closeDrawers();
                 if (!wasSelected) {
-                    currentFragment = DemoFragment.newInstance(position);
-                    fragmentManager.beginTransaction()
-                            .setCustomAnimations(R.anim.fade_in, R.anim.fade_out)
-                            .replace(R.id.home_container, currentFragment)
-                            .commit();
+                    mViewPager.setCurrentItem(position);
                 } else if (position > 0) {
-                    currentFragment.refresh();
+
                 }
             }
         });
 
-        currentFragment = DemoFragment.newInstance(0);
-        fragmentManager.beginTransaction()
-                .replace(R.id.home_container, currentFragment)
-                .commit();
+    }
+
+    private void initFragments() {
+        homeFragments.add(new IndexFragment());
+        homeFragments.add(new SearchFragment());
+        homeFragments.add(new TransactionFragment());
+        homeFragments.add(new MyFragment());
+
+        fragmentAdapter = new HomeFragmentAdapter(getSupportFragmentManager(), homeFragments);
+        mViewPager.setAdapter(fragmentAdapter);
+        mViewPager.setCurrentItem(0);
     }
 
     public void updateBottomNavigationColor(boolean isColored) {

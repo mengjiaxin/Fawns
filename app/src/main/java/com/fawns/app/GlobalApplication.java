@@ -36,7 +36,7 @@ public class GlobalApplication extends Application {
         // CrashReport.testJavaCrash();
 
         MobclickAgent.setDebugMode(true);
-        MobclickAgent.updateOnlineConfig(this);
+//        MobclickAgent.updateOnlineConfig(this);
         MobclickAgent.openActivityDurationTrack(false);
         UmengUpdateAgent.setUpdateCheckConfig(false);
         UmengUpdateAgent.update(this);

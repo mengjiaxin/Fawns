@@ -25,7 +25,7 @@ public class AHBottomNavigation extends FrameLayout {
 
     // Static
     private static String TAG = AHBottomNavigation.class.getSimpleName();
-    private static final int MIN_ITEMS = 3;
+    private static final int MIN_ITEMS = 4;
     private static final int MAX_ITEMS = 5;
 
     // Listener
@@ -121,6 +121,8 @@ public class AHBottomNavigation extends FrameLayout {
         } else if (items.size() > MAX_ITEMS) {
             Log.w(TAG, "The items list should not have more than 5 items");
         }
+
+
     }
 
     /**

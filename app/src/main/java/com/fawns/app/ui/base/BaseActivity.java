@@ -1,7 +1,10 @@
 package com.fawns.app.ui.base;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 
 import com.fawns.app.GlobalApplication;
 import com.fawns.app.R;
@@ -37,8 +40,10 @@ public abstract class BaseActivity extends BaseAppCompatActivity implements Base
         if (null != mToolbar) {
             setTitle(setToolbarTitle());
             setSupportActionBar(mToolbar);
-            getSupportActionBar().setHomeButtonEnabled(true);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            if(isBackHomeButtonEnabled()){
+                getSupportActionBar().setHomeButtonEnabled(true);
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            }
         }
     }
 
@@ -86,10 +91,23 @@ public abstract class BaseActivity extends BaseAppCompatActivity implements Base
         toggleShowLoading(false, null);
     }
 
+    protected abstract boolean isBackHomeButtonEnabled();
+
     protected abstract boolean isApplyKitKatTranslucency();
 
     /**
      * setTitle
      */
     protected abstract String setToolbarTitle();
+
+    protected void hideKeyboard(EditText editText) {
+        InputMethodManager imm = (InputMethodManager) getSystemService(
+                Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
+    }
+
+    protected void showKeyboard(EditText editText) {
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.showSoftInput(editText, InputMethodManager.SHOW_FORCED);
+    }
 }
